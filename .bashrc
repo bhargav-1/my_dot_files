@@ -111,7 +111,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -iv'
 alias mkdir='mkdir -p'
-alias ps='ps auxf'
+# alias ps='ps auxf'
 alias ping='ping -c 10'
 alias less='less -R'
 alias cls='clear'
@@ -710,8 +710,8 @@ if ps -o cmd= -p $(ps -o ppid= -p $$) | grep -q gnome; then
   fi
 
   #source /opt/ros/kinetic/setup.bash
-  source /opt/ros/melodic/setup.bash
-  source /opt/ros/melodic/setup.bash
+  # source /opt/ros/melodic/setup.bash
+  # source /opt/ros/melodic/setup.bash
   set -o vi
 
 PROMPT_COMMAND='__setprompt'
