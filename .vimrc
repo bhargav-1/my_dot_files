@@ -1,10 +1,10 @@
 
 """""""""""""""""""""""""""""""""""""
-" Allan MacGregor Vimrc configuration 
+" Allan MacGregor Vimrc configuration
 """""""""""""""""""""""""""""""""""""
 set encoding=utf-8
 
-"""" START Vundle Configuration 
+"""" START Vundle Configuration
 
 " Disable file type for vundle
 filetype off                  " required
@@ -19,7 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 " Utility
 Plugin 'wakatime/vim-wakatime'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
 "Plugin 'BufOnly.vim'
 "Plugin 'wesQ3/vim-windowswap'
@@ -36,9 +36,9 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'jceb/vim-orgmode'
 Plugin 'tpope/vim-speeddating'
-" Generic Programming Support 
+" Generic Programming Support
 Plugin 'honza/vim-snippets'
-" Plugin 'Townk/vim-autoclose' , commenting to fix pumvisible error 
+" Plugin 'Townk/vim-autoclose' , commenting to fix pumvisible error
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tobyS/vmustache'
 Plugin 'janko-m/vim-test'
@@ -69,7 +69,7 @@ Plugin 'vim-erlang/vim-erlang-runtime'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'vim-erlang/vim-erlang-compiler'
 
-" Elixir Support 
+" Elixir Support
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'avdgaag/vim-phoenix'
 Plugin 'mmorearty/elixir-ctags'
@@ -115,7 +115,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'easymotion/vim-easymotion'
-Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -129,12 +129,12 @@ Plugin 'jistr/vim-nerdtree-tabs'
 
 Plugin 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
-"Plugin for removing whitespaces 
+"Plugin for removing whitespaces
 Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-"""" END Vundle Configuration 
+"""" END Vundle Configuration
 
 """""""""""""""""""""""""""""""""""""
 " Configuration Section
@@ -163,7 +163,7 @@ let g:elite_mode=1
 " Enable highlighting of the current line
 set cursorline
 
-" Theme and Styling 
+" Theme and Styling
 syntax on
 set t_Co=256
 
@@ -185,11 +185,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme ='minimalist'
-let g:airline_powerline_fonts = 1 
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_theme='hybrid'
 let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1 
+let g:hybrid_reduced_contrast = 1
 
 
 " Syntastic Configuration
@@ -208,7 +208,7 @@ let g:syntastic_check_on_open = 1
 autocmd! BufWritePost * Neomake
 let g:neomake_elixir_enabled_makers = ['mix', 'credo', 'dogma']
 
-" Vim-PDV Configuration 
+" Vim-PDV Configuration
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 
 " Markdown Syntax Support
@@ -352,7 +352,9 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 " Mappings configurationn
 """""""""""""""""""""""""""""""""""""
 map <C-F> :NERDTreeToggle<CR>
-map <C-n> :TagbarToggle<CR>
+map <C-n> :TagbarOpen fj<CR>
+map <C-m> :TagbarClose<CR>
+
 
 " Omnicomplete Better Nav
 " inoremap <expr> <c-j> ("\<C-n>")
@@ -408,7 +410,7 @@ map <C-n> :TagbarToggle<CR>
 " 	nnoremap <Left>  :vertical resize +2<CR>
 " 	nnoremap <Right> :vertical resize -2<CR>
 " endif
-" 
+"
 " map <silent> <LocalLeader>ws :highlight clear ExtraWhitespace<CR>
 "
 " " Advanced customization using autoload functions
@@ -421,8 +423,8 @@ map <C-n> :TagbarToggle<CR>
 set secure
 set mouse=a
 set clipboard=unnamedplus
-filetype plugin indent on 
-"augroup autoformat_settings  
+filetype plugin indent on
+"augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
   autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
   autocmd FileType dart AutoFormatBuffer dartfmt
@@ -451,14 +453,14 @@ let g:clang_format#style_options = {
 " nmap <Leader>C :ClangFormatAutoToggle<CR>
 "
 "
-" enable this for autoformating 
+" enable this for autoformating
 
 autocmd FileType cpp ClangFormatAutoEnable
 
 set number
 set wildmenu
 cnoremap w!! execute silent! write !sudo tee % >/dev/null' <bar> edit!
-"syntax enable 
+"syntax enable
 "colorscheme corporation_modified
 
 "colorscheme CodeFactoryv3
@@ -478,10 +480,10 @@ set hidden
 set incsearch
 set hlsearch
 set showmode
-set ttimeout 
+set ttimeout
 set ignorecase
 set wildmenu
-set autoread 
+set autoread
 set backspace=indent,eol,start
 set number
 set laststatus=2
@@ -495,7 +497,7 @@ let &colorcolumn="80"
 
 " ==== NERDTREE
 let NERDTreeIgnore = ['__pycache__', '\.pyc$', '\.o$', '\.so$', '\.a$', '\.swp', '*\.swp', '\.swo', '\.swn', '\.swh', '\.swm', '\.swl', '\.swk', '\.sw*$', '[a-zA-Z]*egg[a-zA-Z]*', '.DS_Store']
-let g:NERDTreeWinSize=60 
+let g:NERDTreeWinSize=60
 map <C-f> :NERDTreeToggle<CR>
 
 let NERDTreeShowHidden=0
@@ -536,16 +538,16 @@ let g:clang_format#style_options = {
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 
-let g:DoxygenToolkit_briefTag_pre="@brief  " 
-let g:DoxygenToolkit_paramTag_pre="@param " 
-let g:DoxygenToolkit_returnTag="@return " 
-let g:DoxygenToolkit_blockHeader="----------------------------------------------------------------" 
-let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------" 
-let g:DoxygenToolkit_authorName="ULC Robotics " 
+let g:DoxygenToolkit_briefTag_pre="@brief  "
+let g:DoxygenToolkit_paramTag_pre="@param "
+let g:DoxygenToolkit_returnTag="@return "
+let g:DoxygenToolkit_blockHeader="----------------------------------------------------------------"
+let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------"
+let g:DoxygenToolkit_authorName="ULC Robotics "
 "let g:DoxygenToolkit_licenseTag="MIT License"   <-- !!! Does not end with "
 "\<enter>"
-"let g:DoxygenToolkit_licenseTag="ULC Robotics Copyrights"   
-"<-- !!! Does not end with 
+"let g:DoxygenToolkit_licenseTag="ULC Robotics Copyrights"
+"<-- !!! Does not end with
 "\<enter>"
 
 
@@ -573,12 +575,12 @@ let g:DoxygenToolkit_authorName="ULC Robotics "
  " Enable trimming of trailing whitespace when uncommenting
   let g:NERDTrimTrailingWhitespace = 1
 
- " Enable NERDCommenterToggle to check all selected lines is commented or not 
+ " Enable NERDCommenterToggle to check all selected lines is commented or not
  let g:NERDToggleCheckAllLines = 1
  execute pathogen#infect()
  set pastetoggle=<F2>
- 
-" Auto Complete of brackets 
+
+" Auto Complete of brackets
 " vim auto pair plugin installed
 "
 let  g:C_UseTool_cmake    = 'yes'
@@ -644,7 +646,7 @@ let g:rainbow_active = 1
 "
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors=0
-hi IndentGuidesEven ctermbg=black 
+hi IndentGuidesEven ctermbg=black
 hi IndentGuidesOdd ctermbg=darkgrey
 set ts=4 sw=4 et
 let g:indent_guides_start_level =2
@@ -674,11 +676,12 @@ let g:cpp_class_decl_highlight = 1
 let g:ycm_semantic_triggers = {
 \   'roslaunch' : ['="', '$(', '/'],
 \   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
-\   'cpp,cuda,objcpp': ['->', '.', '::'], 
+\   'cpp,cuda,objcpp': ['->', '.', '::'],
 \}
 
 nnoremap <Space> i_<Esc>r
 let g:better_whitespace_ctermcolor='Blue'
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
+set tags=tags
 
