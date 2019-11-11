@@ -652,8 +652,8 @@ function __setprompt
 	# Jobs
 	PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]\j"
 
-	# Network Connections (for a server - comment out for non-server)
-	PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]Net $(awk 'END {print NR}' /proc/net/tcp)"
+	# # Network Connections (for a server - comment out for non-server)
+	# PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]Net $(awk 'END {print NR}' /proc/net/tcp)"
 
 	PS1+="\[${DARKGRAY}\])-"
 
