@@ -193,9 +193,9 @@ let g:hybrid_reduced_contrast = 1
 
 
 " Syntastic Configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -351,9 +351,9 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 """""""""""""""""""""""""""""""""""""
 " Mappings configurationn
 """""""""""""""""""""""""""""""""""""
-map <C-F> :NERDTreeToggle<CR>
-map <C-n> :TagbarOpen fj<CR>
-map <C-m> :TagbarClose<CR>
+" map <C-F> :NERDTreeToggle<CR>
+" map <C-n> :TagbarOpen fj<CR>
+" map <C-m> :TagbarClose<CR>
 
 
 " Omnicomplete Better Nav
@@ -514,6 +514,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 set statusline+=%#warningmsg#
+" set statusline+=TIME:\ %{strftime('%c')}
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_javascript_checkers = ['eslint']
@@ -684,4 +685,5 @@ let g:better_whitespace_ctermcolor='Blue'
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 set tags=tags
+
 
