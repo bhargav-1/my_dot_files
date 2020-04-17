@@ -656,7 +656,6 @@ function __setprompt
 	# PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]Net $(awk 'END {print NR}' /proc/net/tcp)"
 
 	PS1+="\[${DARKGRAY}\])-"
-
 	# User and server
 	local SSH_IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
 	local SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
@@ -674,6 +673,13 @@ function __setprompt
 
 	# Number of files
 	PS1+="\[${GREEN}\]\$(/bin/ls -A -1 | /usr/bin/wc -l)\[${DARKGRAY}\])"
+
+
+    parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    }
+    PS1+="-$(parse_git_branch)"
+
 
 	# Skip to the next line
 	PS1+="\n"
@@ -715,4 +721,6 @@ if ps -o cmd= -p $(ps -o ppid= -p $$) | grep -q gnome; then
   set -o vi
 
 PROMPT_COMMAND='__setprompt'
-
+# xinput map-to-output 13 USB-C-0
+export ROS_MASTER_URI=http://master:11311
+export ROS_HOSTNAME=dev
