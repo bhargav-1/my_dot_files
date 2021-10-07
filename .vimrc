@@ -17,7 +17,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Utility
-Plugin 'wakatime/vim-wakatime'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
@@ -29,7 +28,7 @@ Plugin 'junegunn/fzf'
 Plugin 'luochen1990/rainbow'
 "Plugin 'godlygeek/tabular'
 "Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'benmills/vimux'
+" Plugin 'benmills/vimux'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'gilsondev/searchtasks.vim'
 Plugin 'Shougo/neocomplete.vim'
@@ -239,8 +238,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
-" Vim-Test Configuration
-let test#strategy = "vimux"
 
 " Neocomplete Settings
 let g:acp_enableAtStartup = 0
