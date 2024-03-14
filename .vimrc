@@ -17,6 +17,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Utility
+Plugin 'wakatime/vim-wakatime'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
@@ -28,7 +29,7 @@ Plugin 'junegunn/fzf'
 Plugin 'luochen1990/rainbow'
 "Plugin 'godlygeek/tabular'
 "Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'benmills/vimux'
+Plugin 'benmills/vimux'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'gilsondev/searchtasks.vim'
 Plugin 'Shougo/neocomplete.vim'
@@ -196,9 +197,9 @@ let g:hybrid_reduced_contrast = 1
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 " let g:syntastic_enable_elixir_checker = 1
 " let g:syntastic_elixir_checkers = ["elixir"]
@@ -238,6 +239,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
+" Vim-Test Configuration
+let test#strategy = "vimux"
 
 " Neocomplete Settings
 let g:acp_enableAtStartup = 0
@@ -420,6 +423,8 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 set secure
 set mouse=a
 set clipboard=unnamedplus
+" for copy paste to different files use:
+" sudo apt install vim-gtk
 filetype plugin indent on
 "augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
@@ -506,19 +511,19 @@ let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows=0
 
 " ==== Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 set statusline+=%#warningmsg#
 " set statusline+=TIME:\ %{strftime('%c')}
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_mri_args = "--config=$HOME/.jshintrc"
-let g:syntastic_python_checkers = [ 'pylint', 'flake8', 'pep8', 'pyflakes', 'python']
-let g:syntastic_yaml_checkers = ['jsyaml']
-let g:syntastic_html_tidy_exec = 'tidy5'
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_mri_args = "--config=$HOME/.jshintrc"
+" let g:syntastic_python_checkers = [ 'pylint', 'flake8', 'pep8', 'pyflakes', 'python']
+" let g:syntastic_yaml_checkers = ['jsyaml']
+" let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_cpp_cpplint_exec = 'cpplint'
 
 let g:clang_library_path='/usr/lib/llvm-3.6/lib/libclang-3.6.so.1'
@@ -682,5 +687,3 @@ let g:better_whitespace_ctermcolor='Blue'
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 set tags=tags
-
-
